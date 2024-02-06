@@ -28,8 +28,9 @@ int main ()
     getline(cin, movie_name);
     do
     {
-        cout << left << setw(30) << "Adult Tickets Sold:  " << right << setw(10);
+        cout << left << setw(30) << "Adult Tickets Sold:  ";
         cin >> adult_ticket;
+        cout << right << setw(20);
         if (adult_ticket < 0)
         {
             cout << "Input Validation. Enter a positive number. \n";
@@ -38,7 +39,7 @@ int main ()
 
     do
     {
-        cout << left << setw(30) << "Child Tickets Sold: " << right << setw(10);
+        cout << left << setw(30) << "Child Tickets Sold: " << right << setw(20);
         cin >> child_ticket;
         if (child_ticket < 0)
         {
