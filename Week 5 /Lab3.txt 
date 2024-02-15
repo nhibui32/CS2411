@@ -1,0 +1,20 @@
+Lab-3
+Team#: ___ 
+Team Member-1:________________________ Member’s Contribution (in %) __
+Team Member-2:________________________ Member’s Contribution (in %) __
+Team Member-3:________________________ Member’s Contribution (in %) __
+
+Submission
+1.	Work on the following requirements.
+2.	Show the results to the instructor. Please note that Lab score will be zero if you fail to show outputs to the instructor. 
+3.	Rename the CPP file to Lab3_P1_Team# for Problem-1. 
+4.	Upload your files to Canvas.
+
+Problem-1
+Write a program that asks to read a set of numbers from numbers.txt file, and sum the numbers. The sum should be stored in an output file and displayed on screen. The number.txt file is available in the lab folder.  
+
+Programming Style: Make sure the programming style is followed. [10 points]
+Programming Comments: Please make sure the code is well-commented. [10 points]
+ 
+Note: Use of ChatGPT or similar generative AI is not allowed. 
+

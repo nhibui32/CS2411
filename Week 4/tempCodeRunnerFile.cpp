@@ -1,89 +1,69 @@
-/*Ngoc Anh Nhi Bui 
-02/03/2024
-Team 2 presentation - practice 
-A bank charges $10 per month plus the following check fees for a commercial checking account:
-	$.10 each for fewer than 20 checks
-	$.08 each for 20–39 checks
-	$.06 each for 40–59 checks
-	$.04 each for 60 or more checks
+/*
+Lab:0
+Team: 7 
+Team Members:
+	- Member - Collin Mendoza: 33.3%
+	- Member - Zaria Richards: 33.3%
+	- Member - Ngoc Anh Nhi Bui: 33.3%
 
-The bank also charges an extra $15 if the balance of the account falls below 
-$400 (before any check fees are applied). Write a program that asks for the beginning balance and the number of checks written. Compute and display the bank’s service fees for the month.
-
-Input Validation: Do not accept a negative value for the number of checks written. If a negative value is given for the beginning balance, display an urgent message indicating the account is overdrawn.
-
-Specifically, you will have to 
-1)	Explain the problem statement (10 points). 
-2)	Compile and execute the code (10 points).
-3)	Explain the outputs (10 points)
-4)	Go through the code line-by-line and explain each line (50 points). 
-5)	Answer the audience’s questions (20 points).  
+A movie theater only keeps a percentage of the revenue earned from ticket sales. 
+The remainder goes to the movie distributor. Write a program that calculates a theater’s gross [20 points], net box ofﬁce proﬁt [15 points], and amount paid to the distributor [10 points] for a night. The program should ask for the name of the movie [5 points] and how many adult [5 points] and child [5 points] tickets were sold. Assume that an adult ticket costs $10.00 and a child’s ticket is $5.00. Assume the theater keeps 20 percent of the gross box ofﬁce proﬁt.
 */
 
-#include <iostream>
-#include <cmath>
+#include <iostream> 
+#include <string>
 #include <iomanip>
 using namespace std;
 int main ()
 {
-    // constant variable
-    // const int monthly_fee = 10;
-    // const int extra_fee = 15;
+    // 1- VARIABLES 
+    float gross_profit, adult_ticket_total, child_ticket_total; 
+    float net_profit, distributer_profit;
+    int adult_tickets, child_tickets; 
+    const float adult_cost = 10.00f;
+    const float child_cost = 5.00f;
+    const double theater_percent = 0.2; 
+    string movie_name;
 
-    // variable
-    int amount_of_check; 
-    float beginning_balance, bank_service_fee = 0;
-
-    do 
+    // 2 - INPUT
+    cout << endl << endl << "Program input" << endl << endl;
+    cout << "Enter the name of the movie: "; 
+    getline(cin, movie_name);
+    do
     {
-        cout << "The beginning balance: " ;
-        cin >> beginning_balance; 
-        if (beginning_balance < 0)
+        cout << "How many adult tickets were sold? ";
+        cin >> adult_tickets;
+        if (adult_tickets < 0)
         {
-            cout << "Invalid valuation. Enter a positive number. \n";
-            // cin >> beginning_balance;
+            cout << "Input Validation. Enter a positive number. \n";
         }
-    } while(beginning_balance < 0);
+    } while(adult_tickets <0);
 
     do
     {
-        cout << "The amount of check: ";
-        cin >> amount_of_check;
-        if (amount_of_check < 0)
+        cout << "How many child tickets were sold? ";
+        cin >> child_tickets;
+        if (child_tickets < 0)
         {
-            cout << "Invalid valuation. Enter a positive number. \n";
-            //cin >> amount_of_check;
+            cout << "Input Validation. Enter a positive number. \n";
         }
-    } while (amount_of_check < 0);
+    }while(child_tickets <0);
 
-    if (beginning_balance >= 0 && beginning_balance < 400)
-    {
-        bank_service_fee += 15;
-    }
-    else
-    {
-        bank_service_fee += 10;
-    }
+    // 3 - PROCESS 
+    adult_ticket_total = adult_tickets * adult_cost;
+    child_ticket_total = child_tickets * child_cost;
+    gross_profit = adult_ticket_total + child_ticket_total;
+    net_profit = gross_profit * theater_percent;
+    distributer_profit = gross_profit - net_profit;
 
-    if(amount_of_check >= 0 && amount_of_check < 20)
-    {
-        bank_service_fee += amount_of_check * 0.10;
-    }
-    else if (amount_of_check <= 39 )
-    {
-        bank_service_fee += amount_of_check * 0.08;
-    }
-    else if (amount_of_check <= 59)
-    {
-        bank_service_fee += amount_of_check * 0.06;
-    }
-    else
-    {
-        bank_service_fee += amount_of_check * 0.04;
-    }
-
-    cout << "The bank’s service fees: $" << bank_service_fee; 
+    // 4 - OUTPUT
+    cout << endl << endl << "Program output" << endl << endl;
+    cout << left << setw(30) << "Movie Name " << left << setw(10) << movie_name << endl;
+    cout << left << setw(30) << "Adult Tickets Sold: " << left << setw(10) << adult_tickets << endl;
+    cout << left << setw(30) << "Child Tickets Sold: " << left << setw(10) << child_tickets << endl;
+    cout << left << setw(30) << "Gross Box Office Profit: " << setprecision(2) << "$ "  << fixed << left << setw(10) << gross_profit << endl;
+    cout << left << setw(30) << "Net Box Office Profit: " <<"$ " << left << setw(10) << net_profit << endl;
+    cout << left << setw(30) << "Amount Paid to Distributor: " <<"$ " << left << setw(10) << distributer_profit << endl;
 
     return 0;
-
 }
