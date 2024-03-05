@@ -4,7 +4,7 @@
 using namespace std;
 
 void anotherFunction(); // Function prototype
-
+num = 100; // global should use the constant 
 int main()
 {
    int num = 1;   // Local variable
