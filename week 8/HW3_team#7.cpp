@@ -2,12 +2,12 @@
 using namespace std;
 double averNum(int Num[], int Array_size)
 {
-    double sum =0;
+    double sum = 0;
     for (int i=0 ; i < Array_size ; i++)
     {
-        sum += Num[i];
+        sum += i;
     }
-    return sum;
+    return sum / Array_size;
 }
 int main()
 {
@@ -17,7 +17,7 @@ int main()
     while (numStu > 10 || numStu <= 0 )
     {
         cout << "Input validation. Please re-enter.";
-        cin >> numStu; 
+        cin >> numStu;
     }
     const int SIZE = numStu;
     cout << "So there are " << SIZE << " numbers of students in this survey. \n" ;
@@ -28,7 +28,7 @@ int main()
         cout << "The numbers of movie that student number " << i+1 << " watch is:";
         cin >> numMovies;
     }
-    cout << "the average of movies of " << SIZE << " students is: ";
-    cout << averNum(stuNum, SIZE);
+    cout << "The average of movies of " << SIZE << " students is: " << averNum(stuNum, SIZE) ;
+
     return 0;
 }
