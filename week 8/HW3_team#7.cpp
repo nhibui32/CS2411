@@ -22,6 +22,19 @@ double medianNum ( int Num[], const int Array_size)
     }
     return median;
 }
+int totalMovie(int Num[], const int Array_size)
+{
+    for (int i = 0; i < Array_size ; i++)
+    {
+        cout << "S" << i+1 << ": ";
+        for (int j = 0 ; j <Num[i]; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    return 0;
+}
 int main()
 {
     int numStu;
@@ -44,6 +57,7 @@ int main()
     }
     cout << "The average number of movies watched by " << SIZE << " students is: " << averNum(stuNum, SIZE) << endl;
     cout << "The median number of movies watched by " << SIZE <<" students is: " << medianNum(stuNum, SIZE) << endl;
-
+    cout << "Student total movie: " << endl;
+    cout << totalMovie(stuNum, SIZE);
     return 0;
 }
