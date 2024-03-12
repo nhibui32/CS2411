@@ -1,2 +1,1 @@
-# CS2411
-# CS2
+# Procedural and Object-Oriented Programming with C++ 
