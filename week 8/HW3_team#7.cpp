@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
-double averNum(int Num[], int Array_size)
+double averNum(const int Num[], int Array_size)
 {
     double sum = 0;
     for (int i=0 ; i < Array_size ; i++)
     {
-        sum += i;
+        sum += Num[i];
     }
-    return sum / Array_size;
+    return sum / Array_size ;
 }
 int main()
 {
@@ -25,10 +25,11 @@ int main()
     for(int i = 0 ; i < SIZE ; i++)
     {
         int numMovies;
-        cout << "The numbers of movie that student number " << i+1 << " watch is:";
+        cout << "Enter the number of movies that student number  " << i+1 << " watched: ";
         cin >> numMovies;
+        stuNum[i] = numMovies; // store the array in a temp variable, check lab #5. 
     }
-    cout << "The average of movies of " << SIZE << " students is: " << averNum(stuNum, SIZE) ;
+    cout << "The average number of movies watched by " << SIZE << " students is: " << averNum(stuNum, SIZE) ;
 
     return 0;
 }
