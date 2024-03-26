@@ -1,48 +1,64 @@
+/*
+Homework: 3
+Team: 7
+Team Members:
+    - Member - Collin Mendoza: 33.3%
+    - Member - Zaria Richards: 33.3%
+    - Member - Ngoc Anh Nhi Bui: 33.3%
+
+*/
 #include <iostream>
 using namespace std;
-double averNum(int* Num[], int* Array_size)
+void averNum(int* Num, const int * Array_size)
 {
     double sum = 0;
-    for (int i=0 ; i < Array_size ; i++)
+    for (int i=0 ; i < *Array_size ; i++)
     {
         sum += Num[i];
     }
-    return sum / Array_size ;
+    cout << "The average number of movies watched by " << *Array_size << " students is: " <<  sum / *Array_size << endl ;
 } 
-double medianNum(int* Num[], const int Array_size)
+
+double medianNum(int* Num, const int * Array_size)
 {
+    int *tempNum = new int[*Array_size];
+    for (int i = 0; i < *Array_size; i++) {
+    tempNum[i] = Num[i];
+    }
     int startScan, minIndex;
     int minElem;
-    for (startScan = 0; startScan < (Array_size - 1); startScan++)
+    for (startScan = 0; startScan < (*Array_size - 1); startScan++)
     {
         minIndex = startScan;
-        minElem = Num[startScan];
-        for (int index = startScan + 1; index < Array_size; index++)
+        minElem = tempNum[startScan];
+        for (int index = startScan + 1; index < *Array_size; index++)
         {
-            if (Num[index] < minElem)
+            if (tempNum[index] < minElem)
             {
-                minElem = Num[index];
+                minElem = tempNum[index];
                 minIndex = index;
             }
         }
-        Num[minIndex] = Num[startScan];
-        Num[startScan] = minElem;
+        tempNum[minIndex] = tempNum[startScan];
+        tempNum[startScan] = minElem;
     }
     double median = 0.0;
-    if (Array_size % 2 == 1)
+    if (*Array_size % 2 == 1)
     {
-        median = Num[(Array_size - 1) / 2];
+        median = tempNum[(*Array_size - 1) / 2];
     }
     else
     {
-        median = (Num[Array_size / 2] + Num[Array_size / 2 - 1]) / 2.0;
+        median = (tempNum[*Array_size / 2] + tempNum[*Array_size / 2 - 1]) / 2.0;
     }
-    return median;
+    
+    return median; 
+    delete[] tempNum;
 }
-
-int totalMovie(int Num[], const int Array_size)
+void totalMovie(int* Num, const int *Array_size)
 {
-    for (int i = 0; i < Array_size ; i++)
+    cout << "Student total movie: " << endl;
+    for (int i = 0; i < *Array_size ; i++)
     {
         cout << "S" << i+1 << ": ";
         for (int j = 0 ; j <Num[i]; j++)
@@ -51,26 +67,24 @@ int totalMovie(int Num[], const int Array_size)
         }
         cout << endl;
     }
-    return 0;
 }
 int main()
 {
     int numStu;
     cout << "Enter the number of students were surveyed: ";
     cin >> numStu;
-    const int SIZE = numStu;
-    cout << "There are " << SIZE << " numbers of students in this survey. \n" ;
-    int stuNum[SIZE];
-    for(int i = 0 ; i < SIZE ; i++)
+    cout << "There are " << numStu << " numbers of students in this survey. \n" ;
+    int* stuNum = new int[numStu];
+    for(int i = 0 ; i < numStu ; i++)
     {
         int numMovies;
         cout << "Enter the number of movies that student number  " << i+1 << " watched: ";
         cin >> numMovies;
-        stuNum[i] = numMovies; // store the array in a temp variable, check lab #5. 
+        stuNum[i] = numMovies;
     }
-    cout << "The average number of movies watched by " << SIZE << " students is: " << averNum(&stuNum, &SIZE) << endl;
-    cout << "The median number of movies watched by " << SIZE <<" students is: " << medianNum(&stuNum, &SIZE) << endl;
-    cout << "Student total movie: " << endl;
-    cout << totalMovie(stuNum, SIZE);
+    averNum(stuNum, &numStu);
+    cout << "The median number of movies watched by " << numStu <<" students is: " <<  medianNum(stuNum, &numStu) << endl;
+    totalMovie(stuNum, &numStu);
+    delete[]stuNum;
     return 0;
 }

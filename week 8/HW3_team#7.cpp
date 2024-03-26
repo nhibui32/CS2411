@@ -93,5 +93,6 @@ int main()
         cout << "The average number of movies watched by " << numStu << " students is: " << averNum(stuNum, numStu) << endl; // Display statement for average number of movies watched by students
     cout << "The median number of movies watched by " << numStu <<" students is: " <<  medianNum(stuNum, numStu) << endl;
     totalMovie(stuNum, numStu);
+    delete[]stuNum;
     return 0;
 }
