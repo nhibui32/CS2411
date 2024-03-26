@@ -1,9 +1,11 @@
 {
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
+        ".fantomasignore": "ignore",
         "istream": "cpp",
         "iomanip": "cpp",
         "ios": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "new": "cpp"
     }
 }

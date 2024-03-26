@@ -46,7 +46,5 @@ int main()
    cout << "Hourly payRate: " << employee.payRate << endl;
    cout << fixed << showpoint << setprecision(2);
    cout << "Gross Pay: $" << employee.grossPay << endl;
-
-   cout << employee;
    return 0;
 }
