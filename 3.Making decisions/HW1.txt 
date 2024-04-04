@@ -1,0 +1,40 @@
+Homework-1
+Team#: ___ 
+Team Member-1:________________________ Member’s Contribution (in %) __
+Team Member-2:________________________ Member’s Contribution (in %) __
+Team Member-3:________________________ Member’s Contribution (in %) __
+
+Submission
+1.	Work on the following requirements.
+2.	Rename the CPP file and algorithm file to HW1_Team# (e.g., HW1_Team1.cpp)
+3.	Upload your files to Canvas.
+Problem Statement: 
+A movie theater only keeps a percentage of the revenue earned from ticket sales. 
+The remainder goes to the movie distributor. Write a program that calculates a theater’s gross [20 points], net box ofﬁce proﬁt [15 points], and amount paid to the distributor [10 points] for a night. The program should ask for the name of the movie [5 points] and how many adult [5 points] and child [5 points] tickets were sold. Assume that an adult ticket costs $10.00 and a child’s ticket is $5.00. Assume the theater keeps 20 percent of the gross box ofﬁce proﬁt.
+
+Input Validation: Make sure all the numbers inputted by the user are non-negative. [10 points]
+
+Programming Style: Make sure the programming style is followed. [10 points]
+Programming Comments: Please make sure the code is well-commented. [10 points]
+
+Note: Use of ChatGPT or similar generative AI is not allowed. 
+
+
+
+
+
+
+Validate your program with different test cases. One test case is given below:
+Program input
+> Enter the name of the movie:  Jumanji
+> How many adult tickets were sold? 382
+> How many child tickets were sold? 127
+
+Program output
+Movie Name:	Casino Royale
+Adult Tickets Sold:	382
+Child Tickets Sold:	127
+Gross Box Ofﬁce Proﬁt:	$ 2673.00
+Net Box Ofﬁce Proﬁt:	$   534.60
+Amount Paid to Distributor:	$ 2138.40
+
