@@ -20,7 +20,6 @@ void showItem(InventoryItem);    // Argument passed by value
 int main()
 {
    InventoryItem part;
-
    getItem(part);
    showItem(part);
    return 0;
