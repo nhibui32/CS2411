@@ -27,7 +27,7 @@ Create an array of the struct type to store players’ information. Let the user
 
 ```C++
     int size;
-    cout << "enter size:";
+    cout << "How many players? ";
     cin >> size;
     football_player *player_information = new football_player[size];
     for (int i = 0; i < size ; i++)
@@ -53,31 +53,55 @@ Create an array of the struct type to store players’ information. Let the user
 Prompt the user to enter each player’s information. In the previous example, you will prompt the user 5 times – one time per player. Store the user’s information in the array. [10 points].
 
 Compute max and min statistics of the data in the following format [30 points]:
+``` C++
+void computeStatistics(football_player *player_information, int size){
+    int maxTouchdowns = player_information[0].touchdowns;
+    int minTouchdowns = player_information[0].touchdowns;
+    int maxCatches = player_information[0].catch;
+    int minCatches = player_information[0].catch;
+    int maxPassingYards = player_information[0].passing_yards;
+    int minPassingYards = player_information[0].passing_yards;
+    int maxReceivingYards = player_information[0].receiving_yards;
+    int minReceivingYards = player_information[0].receiving_yards;
+
+    vector<string> maxTouchdowns;
+    vector<string> minTouchdowns;
+    vector<string> maxCatches;
+    vector<string> minCatches;
+    vector<string> maxPassingYards;
+    vector<string> minPassingYards;
+    vector<string> maxReceivingYards;
+    vector<string> minReceivingYards;
+
+    for (int i = 1; i < size ; i++){
+        if(player_information[i].touchdowns > maxTouchdowns){
+            maxTouchdowns.clear();
+            maxTouchdowns.push_back(player_information[i].name);
+        }
+        else if(player_information[i].touchdowns == maxTouchdowns){
+            maxTouchdowns.push_back(player_information[i].name);
+        }
+
+        if(player_information[i].touchdowns < maxTouchdowns){
+            maxTouchdowns.clear();
+            maxTouchdowns.push_back(player_information[i].name);
+        }
+        else if(player_information[i].touchdowns == maxTouchdowns){
+            maxTouchdowns.push_back(player_information[i].name);
+        }
+
+    }
+
+
+}
+```
+
 
 Number of touchdowns:
 ====================
     Maximum is 10 by player AAA
     Minimum is 1 by player CCC
  
-```C++
-void touchdowns(struct football_player player_information[],size)
-{
-    string max_player, min_player;
-    int max = 0;
-    int min = player_information[0].touchdowns;
-    for(int i = 0; i <size; i++)
-    {
-        if (player_information[i].touchdowns > max)
-            max = player_information[i].touchdowns;
-            max_player = player_information[i].name;
-        if (player_information[i].touchdowns < min )
-            min = player_information[i].touchdowns;
-            min_player = player_information[i].name;
-    }
-    cout << "Maximum is: " << max << " by player" << max_player;
-    cout << "Minimum is: " << min << " by player" << min_player;
-}
-```
 Number of catches:
 ====================
     Maximum is 3 by player BBB
