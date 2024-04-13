@@ -103,17 +103,17 @@ void computeStatistics(football_player *player_information, int size){
         }
     }
 
-    cout << endl << endl << "Number of touchdowns: " << endl;
+    cout << "Number of touchdowns: " << endl;
     cout << "Maximum is " << maxTouchdowns << " by players: ";
     for (int j=0 ; j< PlayermaxTouchdowns.size(); j++){
         cout << PlayermaxTouchdowns[j] << "\t";
     }
-    cout << endl << endl << "Minimum is " << minTouchdowns << " by players: ";
+    cout << endl << "Minimum is " << minTouchdowns << " by players: ";
     for (int j=0 ; j< PlayerminTouchdowns.size(); j++){
         cout << PlayerminTouchdowns[j] << "\t";
     }
 
-    cout << endl << endl <<  "Number of catches: " << endl;
+    cout << "Number of catches: " << endl;
     cout << "Maximum is " << maxCatches << " by players: ";
     for (int j=0 ; j< PlayermaxCatches.size(); j++){
         cout << PlayermaxCatches[j] << "\t";
@@ -123,7 +123,7 @@ void computeStatistics(football_player *player_information, int size){
         cout << PlayerminCatches[j] << "\t";
     }
 
-    cout << endl << endl << "Number of passing yards: " << endl;
+    cout << "Number of passing yards: " << endl;
     cout << "Maximum is " << maxPassingYards << " by players: ";
     for (int j=0 ; j< PlayermaxPassingYards.size(); j++){
         cout << PlayermaxPassingYards[j] << "\t";
@@ -133,7 +133,7 @@ void computeStatistics(football_player *player_information, int size){
         cout << PlayerminPassingYards[j] << "\t";
     }
 
-    cout << endl << endl << "Number of receiving yards: " << endl;
+    cout << "Number of receiving yards: " << endl;
     cout << "Maximum is " << maxReceivingYards << " by players: ";
     for (int j=0 ; j< PlayermaxReceivingYards.size(); j++){
         cout << PlayermaxReceivingYards[j] << "\t";
@@ -156,14 +156,15 @@ int main(){
         cin.ignore();
         getline(cin,player_information[i].name);
         cout << "Position: ";
+        //cin.ignore();
         getline(cin,player_information[i].position);
         cout << "Touchdowns: ";
         cin >> player_information[i].touchdowns;
         cout << "catches: ";
         cin >> player_information[i].Catches;
-        cout << "Passing yards: ";
+        cout << "Passing yards";
         cin >> player_information[i].PassingYards;
-        cout << "Receiving yards: ";
+        cout << "Receiving yards";
         cin >> player_information[i].ReceivingYards;
     }
 
